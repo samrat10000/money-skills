@@ -25,7 +25,7 @@ then go beyond it.
 
 1. **Read the whole skill before you act**, in this order: this file, `DISCIPLINE.md`, `SERIES_BIBLE.md`,
    `RULEBOOK.md`, `QA.md`, `PIPELINE.md`, `SOUND_VOICE.md`, `ENVIRONMENT.md`, `TOKENS.md`. Then
-   `PLAYBOOK_EP1.md` (the full worked episode, shot by shot, with code names) and `MISTAKES.md` (the
+   `CAST_AND_CAMERA.md` (every character + movement + camera mode -> code), `PLAYBOOK_EP1.md` (the full worked episode, shot by shot, with code names) and `MISTAKES.md` (the
    rejection history). `ASSETS.md` before touching any model. After a context compaction re-read
    `RULEBOOK.md`, `QA.md` and the project's `EPISODE_STATE.md` before the next action.
 2. **Plan as pictures first.** No shot is built before the episode plan exists as a storyboard page with
@@ -119,6 +119,7 @@ there (or copy it into the project). If `engine/ep1/car/nt.glb` is missing, run 
 | ENVIRONMENT.md | machines, Asus render kit, Remote Control, delivery links, model routing |
 | TOKENS.md | how to get the result in one round and spend 10x fewer tokens |
 | ASSETS.md | asset manifest, download links, how to rebuild or add a character |
+| CAST_AND_CAMERA.md | every character (builder, rig, movement call) and every camera mode (tripod, POV, dashcam, handheld doc, crash zoom, tyre cam) with code and numbers |
 | PLAYBOOK_EP1.md | Episode 1 v7, all shots: timing, code, lights, sound, director notes, status |
 | MISTAKES.md | every rejection v1 -> v7 and the fix |
 | COMPANION_SKILLS.md | the sibling skills (make-teaser, make-motion2d) and tools to install |
