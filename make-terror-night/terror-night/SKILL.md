@@ -25,7 +25,7 @@ then go beyond it.
 
 1. **Read the whole skill before you act**, in this order: this file, `DISCIPLINE.md`, `SERIES_BIBLE.md`,
    `RULEBOOK.md`, `QA.md`, `PIPELINE.md`, `SOUND_VOICE.md`, `ENVIRONMENT.md`, `TOKENS.md`. Then
-   `CAST_AND_CAMERA.md` (every character + movement + camera mode -> code), `PLAYBOOK_EP1.md` (the full worked episode, shot by shot, with code names) and `MISTAKES.md` (the
+   `LOOK.md` (the style as numbers + the one-still LOOK TEST), `CAST_AND_CAMERA.md` (every character + movement + camera mode -> code), `PLAYBOOK_EP1.md` (the full worked episode, shot by shot, with code names) and `MISTAKES.md` (the
    rejection history). `ASSETS.md` before touching any model. After a context compaction re-read
    `RULEBOOK.md`, `QA.md` and the project's `EPISODE_STATE.md` before the next action.
 2. **Plan as pictures first.** No shot is built before the episode plan exists as a storyboard page with
@@ -82,6 +82,7 @@ there (or copy it into the project). If `engine/ep1/car/nt.glb` is missing, run 
   time), sound cues, and the cut into the next shot. The dialogue table (`templates/dialogue_table.md`).
   Gate G2. One go-ahead.
 - **P3 Assets.** Cast, car, sets, props, textures; reference-first; turnaround sheet vs refs (G3).
+- **P3.5 LOOK TEST** (`LOOK.md` section 7): one still, ~10 s, must pass before any shot on a new machine or model.
 - **P4 First perfect shot.** Probe (3-6 key frames at RES .35-.5, SAMP >= 20, one contact sheet) -> QA ->
   fix -> full render on the GPU box -> sound -> clip -> send. Lock it, write `SHOT_RULES.md`.
 - **P5 Remaining shots** in story order, each through G4 + G5 and delivered on its own.
@@ -119,11 +120,12 @@ there (or copy it into the project). If `engine/ep1/car/nt.glb` is missing, run 
 | ENVIRONMENT.md | machines, Asus render kit, Remote Control, delivery links, model routing |
 | TOKENS.md | how to get the result in one round and spend 10x fewer tokens |
 | ASSETS.md | asset manifest, download links, how to rebuild or add a character |
+| LOOK.md | the style as numbers: ink hull recipe + thickness table, painted materials, practical lights, AgX lens, the one grade + VHS, and the LOOK TEST every new machine/model must pass first |
 | CAST_AND_CAMERA.md | every character (builder, rig, movement call) and every camera mode (tripod, POV, dashcam, handheld doc, crash zoom, tyre cam) with code and numbers |
 | PLAYBOOK_EP1.md | Episode 1 v7, all shots: timing, code, lights, sound, director notes, status |
 | MISTAKES.md | every rejection v1 -> v7 and the fix |
 | COMPANION_SKILLS.md | the sibling skills (make-teaser, make-motion2d) and tools to install |
 | templates/ | EPISODE_STATE.md, shot_card.md, dialogue_table.md, qa_log.md, SHOT_RULES_template.md |
-| scripts/ | contact_sheet.py, preview_encode.sh, run_cut_asus.ps1, fetch_assets.sh/.ps1, make_kit.sh |
+| scripts/ | look_test.py, grade.py, contact_sheet.py, preview_encode.sh, run_cut_asus.ps1, fetch_assets.sh/.ps1, make_kit.sh |
 | engine/ | (in the repo clone; an installed copy names it in `ENGINE_PATH.txt`) the real production code: ep1/ (shots2.py, v7sets.py, city.py, anim.py, snd7/ mixers), cast/ (character builders), pent7/ (penthouse), mh/ (MakeHuman CC0 base) |
 | reference/ | approved stills (the quality bar), the v7 storyboard, the original logs |

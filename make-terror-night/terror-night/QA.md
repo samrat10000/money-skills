@@ -55,6 +55,9 @@ Write the answer to each line before sending anything:
 - [ ] cliffhanger planted earlier (T1.4)
 - [ ] real-world research notes for the location (materials, signage, architecture)
 
+## GL Look test (before the first shot on any new machine or model)
+- [ ] `scripts/look_test.py` still passes the 5 checks in LOOK.md section 7, side by side with `reference/look_test_expected.png`; logged in QA_LOG.md
+
 ## G2 Plan
 - [ ] storyboard page: every shot `NNN_name`, time range, lens/height/move, practical lights, what moves,
       wow detail, dialogue, sound cues, the cut into the next shot
