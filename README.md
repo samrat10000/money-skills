@@ -6,6 +6,7 @@ installer and rules. Works with Claude Code (desktop app, CLI, VS Code extension
 | folder | skill | use |
 |---|---|---|
 | [make-teaser/](make-teaser/) | `/teaser` | 15-25 s viral vertical teaser from an idea, a poster or your assets, any art style, final quality in one round |
+| [make-anime-reel/](make-anime-reel/) | `/anime-reel` | 15-65 s 2D / toon anime story reels and episodes, shot by shot with self-QA, to the 5 O'CLOCK quality bar |
 
 ## Install everything
 ```

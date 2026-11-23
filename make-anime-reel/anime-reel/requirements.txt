@@ -1,0 +1,8 @@
+numpy
+scipy
+Pillow
+pypng
+pycairo
+soundfile
+pyloudnorm
+# plus: ffmpeg on PATH, Blender 5.x with the VRM Add-on v4.10.5 (or pip install bpy for cloud renders)
