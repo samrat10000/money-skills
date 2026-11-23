@@ -6,6 +6,7 @@ installer and rules. Works with Claude Code (desktop app, CLI, VS Code extension
 | folder | skill | use |
 |---|---|---|
 | [make-teaser/](make-teaser/) | `/teaser` | 15-25 s viral vertical teaser from an idea, a poster or your assets, any art style, final quality in one round |
+| [make-motion2d/](make-motion2d/) | `/motion2d` | 2D anime / toon reels and episodes, shot by shot to final quality, from an idea, a poster or your assets (includes the companion skills) |
 
 ## Install everything
 ```
