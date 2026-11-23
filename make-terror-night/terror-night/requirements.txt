@@ -1,0 +1,3 @@
+numpy
+pillow
+# bpy==5.0.*   # only for headless cloud renders without a Blender install
