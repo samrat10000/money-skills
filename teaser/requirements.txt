@@ -1,0 +1,6 @@
+numpy
+scipy
+soundfile
+pyloudnorm
+Pillow
+# plus: ffmpeg on PATH, Blender 5.x (or `pip install bpy`) for 3D styles

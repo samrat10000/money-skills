@@ -1,0 +1,39 @@
+Night Terror teaser v2 sound: real recordings, no music. Sources (Freesound / Openverse):
+
+bear_6: "Nemean Roar.wav" by rifthead (CC0) https://freesound.org/people/rifthead/sounds/240311
+boom2_7: "hit with dust fall.aiff" by SoundCollectah (CC0) https://freesound.org/people/SoundCollectah/sounds/109746
+boom_2: "Cinematic Impact Boom Metalic" by EminYILDIRIM (CC0) https://freesound.org/people/EminYILDIRIM/sounds/535413
+breath_2: "Dragon Sounds Heavy Breathing Sliced.wav" by Karma-Ron (CC0) https://freesound.org/people/Karma-Ron/sounds/547826
+debris2_2: "avl05.wav" by blaukreuz (CC0) https://freesound.org/people/blaukreuz/sounds/162674
+drift2_0: "Passenger car braking on asphalt, tyres screeching // Henkilöauto, jarrutus asfaltilla, renkaat ulvovat" by YleArkisto (CC BY) https://freesound.org/people/YleArkisto/sounds/454687
+drift2_9: "VW Golf GTI Emergency Stop (Zoom H2n M&S).wav" by EverydaySounds (CC0) https://freesound.org/people/EverydaySounds/sounds/268624
+drift_1: "Chrysler LHS tire squeal 02 (04-25-2009).wav" by audible-edge (CC0) https://freesound.org/people/audible-edge/sounds/71737
+drift_6: "car race car citroen race screeching tires" by pawelbas (CC0) https://freesound.org/people/pawelbas/sounds/165075
+elk_0: "Elk 3.wav" by Hyperionn (CC BY) https://freesound.org/people/Hyperionn/sounds/250188
+glass_2: "window break glass shatter ext perspective trailer.wav" by kyles (CC0) https://freesound.org/people/kyles/sounds/452666
+growl_1: "Deep Monster Growl" by uagadugu (CC0) https://freesound.org/people/uagadugu/sounds/222523
+heart_2: "Four Heartbeats HQ_BeatSmith.wav" by Lunardrive (CC0) https://freesound.org/people/Lunardrive/sounds/22416
+hit_5: "Hard Cinematic Hit" by Vendarro (CC0) https://freesound.org/people/Vendarro/sounds/328448
+hit_6: "Bass Boom" by LordHannes (CC0) https://freesound.org/people/LordHannes/sounds/268084
+lion_1: "mgm (lion roar).mp3" by mrrap4food (CC0) https://freesound.org/people/mrrap4food/sounds/618980
+lion_5: "Big Lion Roar" by _justMonke_ (CC0) https://freesound.org/people/_justMonke_/sounds/611721
+passby_1: "Car race, Nordschleife, VLN, single car passing by" by Dominik_W (CC0) https://freesound.org/people/Dominik_W/sounds/350674
+ping_0: "Light_Steel_Pipe_On_Concrete_01.wav" by dheming (CC BY) https://freesound.org/people/dheming/sounds/177783
+ping_4: "spring_ping_1.wav" by strangehorizon (CC0) https://freesound.org/people/strangehorizon/sounds/627502
+rain_7: "balcony city wet raining drips night heavy dark city tone and distant plane Verdun, Montreal, Canada.flac" by kyles (CC0) https://freesound.org/people/kyles/sounds/452442
+rainroof_4: "Heavy rain on car roof - close" by GeorgeHopkins (CC BY) https://freesound.org/people/GeorgeHopkins/sounds/645848
+rev2_0: "Acceleration of a Sports Car Engine like Ferrari or Lamborghini or Porsche" by florianreichelt (CC0) https://freesound.org/people/florianreichelt/sounds/457560
+rev2_9: "V8 Lotus_Sports Car Auto Engine Revs.wav" by jimmygu3 (CC BY) https://freesound.org/people/jimmygu3/sounds/369486
+rev_4: "E-type Jaguar, car engine, rev-twice ,mono.wav" by Dan_AudioFile (CC BY) https://freesound.org/people/Dan_AudioFile/sounds/614695
+roar_5: "Humanoid Creature roaring" by Mastersoundboy2005 (CC0) https://freesound.org/people/Mastersoundboy2005/sounds/722751
+rumble_1: "thunder rumble 1.wav" by FenrirFangs (CC0) https://freesound.org/people/FenrirFangs/sounds/234736
+siren_8: "sirens police distant wail city echo really great clicks to RX out.flac" by kyles (CC0) https://freesound.org/people/kyles/sounds/635740
+splash_0: "water splash" by audiosmedia (CC0) https://freesound.org/people/audiosmedia/sounds/243519
+static_5: "VHS Tape and Machine Rewind High Speed Real Sounds With TV Static Effects" by DudeAwesome (CC BY) https://freesound.org/people/DudeAwesome/sounds/790278
+subdrop_4: "Large, Low Boom.wav" by duckduckpony (CC BY) https://freesound.org/people/duckduckpony/sounds/130973
+tapestop_1: "Tape stop effect" by not_yr (CC0) https://freesound.org/people/not_yr/sounds/680836
+thunder_2: "Thunderclap" by Fission9 (CC0) https://freesound.org/people/Fission9/sounds/534023
+thunder_5: "Thunder big crack explosive close ms 77mel 190903.flac" by TRP (CC0) https://freesound.org/people/TRP/sounds/574412
+tiger_3: "Tiger Roar" by lauramellis (CC0) https://freesound.org/people/lauramellis/sounds/263115
+whoosh_0: "Deep Whoosh #1" by Kinoton (CC0) https://freesound.org/people/Kinoton/sounds/351256
+wiper_2: "car windshield wipers spray water squeaky.wav" by RutgerMuller (CC0) https://freesound.org/people/RutgerMuller/sounds/50905

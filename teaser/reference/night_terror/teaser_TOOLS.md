@@ -1,0 +1,11 @@
+# Teaser 1: tools, repos, skills, sites
+- Blender 5.0.1 portable on the Asus (xc\blender501), Cycles OptiX, RTX 3050 4 GB: final renders. Blender 4.5/5.3 are not used (5.3 needs driver 580+).
+- bpy 5.1.2 (pip, cloud): probes, model building, cloud renders.
+- Ep1 kit: shots2.py, city.py, anim.py, castlib.py, mats.py, look.py (lens grade), shakify_data.py (Camera Shakify handheld data, CC0).
+- Cast models: /mnt/project-files/reels/series/models (stalker.py, skull.py = old deer head, bullskull.py + swap_bullskull.py = new head).
+- ffmpeg + numpy + PIL: grade/VHS/assembly (teaser_edit.py), score cut (score_cut.py), contact sheets.
+- Remote devices (folder access to C:\Users\cross\Downloads\xc): stage/commit files, device_bash for logs. A Remote Control session was used once to start run_full.ps1.
+- Artifact tool: storyboard + animatic page https://claude.ai/artifact/YMZg5DQTrjeuyDoqyA2nYj
+- Web search: viral teaser pacing/angles, cow skull anatomy. Openverse / Freesound / Wikimedia (SFX) were blocked from the cloud (Cloudflare), so not used.
+- Flow Music (flowmusic.app, Sam's Chrome): planned for SFX once Sam is signed in.
+- Skills: artifact-design (storyboard page). The ig-* skills (ig-viral research) were considered for hooks and pacing.
