@@ -1,0 +1,2 @@
+654ef54b300e0d27efceb68bceada232  v7sets.py
+f03698426c76eacad1d3978978ab1aa4  shots2.py
