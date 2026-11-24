@@ -4,7 +4,7 @@
 1. Each shot gets its own real-sound pass when the shot is built (`engine/ep1/snd7/sNNN.py`), so every
    preview the director sees already sounds real.
 2. Dialogue is recorded once, in a batch, from the locked dialogue table (credits are limited).
-3. The score is written/generated for the LOCKED cut, around the lines, entering only at the planned drop.
+3. No background music (T14.3). The one climax piece is placed on the LOCKED cut, landing on the hit.
 4. Final mix + master on the full episode.
 
 ## Sources (real recordings only)
@@ -34,7 +34,7 @@
 - Lobby (050): glass slap on the hand-contact frame, crowd moans muffled through glass, rain, the desk phone
   off-hook tone.
 - Garage (060): tube clunk + hum per tube on its light key; steam hiss; footsteps on concrete.
-- Ignition (080): real engine start, clunk; the score drops on the ignition frame.
+- Ignition (080): real V8 starter crank, catch, two revs (T14.4). No music here.
 - Brute (125): stomps on footfalls; roar = brute_roar slowed to 0.78 + a sub layer at 0.5 + a throat growl at
   0.7 with light crush; the V8 growl back = engine_start rev tail + exhaust pop on the body squat frame; tyre
   spin + whoosh on the swerve.
@@ -53,8 +53,10 @@
   `highpass=f=350,lowpass=f=3400,acrusher=bits=10:mix=.25,aecho=0.8:0.3:12:0.1`.
 
 ## Score
-- Ep1: no score before the ignition (53.5 s). Then the score drops on the engine and runs continuously to
-  the end, thinning to a sub drone for the overpass, never cutting out between shots.
+- **CURRENT RULE (director, 2026-11-24, RULEBOOK T14.3): NO background music in Night Terror.** Only real
+  recordings, plus ONE short piece (6-8 s) at the climax creature encounter, blended in, landing on the hit.
+  (Superseded: the v7 rule "score from the ignition to the end".) Everything below about scoring applies
+  only to that one piece, or to a series whose director asks for a score.
 - Source the director loved: Google Flow Music (flowmusic.app, in the user's browser; they sign in). Prompt
   for an original Stranger Things-like vibe (pulsing 80s analog synth arps + orchestra + real electric guitar
   with bass doubling, slightly detuned, a tuned grand piano opening), never copying a theme melody. The

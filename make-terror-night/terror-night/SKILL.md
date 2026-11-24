@@ -86,9 +86,9 @@ there (or copy it into the project). If `engine/ep1/car/nt.glb` is missing, run 
 - **P4 First perfect shot.** Probe (3-6 key frames at RES .35-.5, SAMP >= 20, one contact sheet) -> QA ->
   fix -> full render on the GPU box -> sound -> clip -> send. Lock it, write `SHOT_RULES.md`.
 - **P5 Remaining shots** in story order, each through G4 + G5 and delivered on its own.
-- **P6 Voice + score** on the locked picture: dialogue first (ElevenLabs or the user's tool), then the
-  score written AROUND the lines (no score before the planned drop). Gate G5.
-- **P7 Edit + master**: cut only from approved shots, one grade, light grain, -14 LUFS, encode IG/master/
+- **P6 Voice + sound** on the locked picture: dialogue in the LOCKED cast voices first (T14.1), narration only
+  in gaps, then real SFX; NO background music, one short climax piece only (T14.3). Gate G5.
+- **P7 Edit + master** (run the full-cut review G6.5 TWICE first; never call a cut final before T16.1 holds): cut only from approved shots, one grade, light grain, -14 LUFS, encode IG/master/
   phone versions, direct download links (G6).
 - **P8 Learn.** Append every lesson to `SHOT_RULES.md`/`MISTAKES.md` and propose updates to this skill.
 
@@ -102,7 +102,7 @@ there (or copy it into the project). If `engine/ep1/car/nt.glb` is missing, run 
 3. **Dense real-world detail** (pre-war New York: hex tile, marble treads worn in the middle, iron balusters,
    oak rail, brass elevator, flyers, claw marks, hand smears, door numbers, B1 PARKING sign).
 4. **Real sound, one line at a time.** Rain, sirens, footsteps on the right surface on the right frame,
-   breathing, the strobe ticking; dialogue never overlaps; the score only starts on the ignition.
+   breathing, the strobe ticking; dialogue never overlaps; no background music (v8 rule: one climax piece only).
 5. **Creatures that are alive and anatomically scary** (bull-skull Stalker with ember-vein eyes and saccades,
    Brute v2 with a wedge skull and torn cheeks), never round, never mirrored, never stick-limbed.
 6. **Continuity of objects and causes**: the phone tossed on the seat in 070 is the phone ringing in 160.
@@ -113,7 +113,7 @@ there (or copy it into the project). If `engine/ep1/car/nt.glb` is missing, run 
 |---|---|
 | DISCIPLINE.md | agent behaviour for Claude desktop, VS Code extension, Codex and small models |
 | SERIES_BIBLE.md | the world, cast, car, creatures, locations, look and story devices of Night Terror |
-| RULEBOOK.md | every rule with its test and the rejection that created it (T0-T12) |
+| RULEBOOK.md | every rule with its test and the rejection that created it (T0-T16; T13-T16 are the story-logic, voice, hook and 'final means final' rules from the v7 final review) |
 | QA.md | the self-review loop, Director's eye list (Sam's real triggers), gates G0-G7 |
 | PIPELINE.md | the engine: how a shot is coded, env vars, render recipes (cloud CPU / Asus GPU), encode |
 | SOUND_VOICE.md | real SFX, call drops, dialogue, score rules, mix numbers |

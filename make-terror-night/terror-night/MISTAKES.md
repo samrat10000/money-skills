@@ -87,6 +87,23 @@ Read once. Each line became a rule in RULEBOOK.md. Dates are 2026-11 (IST).
 - 160 test: rain streaks inside the cabin in front of the lens (rain box overlapped the camera). -> T5.5.
   The phone screen at emission 5 blew to a white bar; 2.2 better, tilt it toward the lens.
 
+## v7 "final" cut (11-24): director "disappointed"
+Kept as perfect: phone + answer, blast, stairwell, garage + car opening, rolling out, the empty-seat ending.
+- Screamer: an "absolute trash" scream swapped in for the superb earlier one; it turned without moving its
+  legs (floating). -> Approved sounds are locked (T13.7); a still creature + camera push (T13.5).
+- Key grab: Sam still sitting on the sofa. -> One body, one place (T13.1).
+- Corridor: Sam's voice read female. -> Locked voice cast (T14.1).
+- Stairs -> lobby -> garage jumped. -> No geography jumps (T13.3); build the connecting moves.
+- Phone picked up by an invisible hand in the car. -> Show the hands (dashcam on the driver) (T13.2).
+- Car sound "trash". -> Real V8 + tyre recordings at teaser grade (T14.4).
+- The car drove through the Brute and nothing happened. -> Collision check + a shown outcome (T13.4).
+- Old Stalker in the bridge scene instead of the teaser model and its skull movement. -> Latest approved only (T13.6).
+- Narration buried under the call. -> Narration only in gaps, 9-12 dB above the bed (T14.2).
+- Background music. -> None; one climax piece only (T14.3).
+- Self-found: the tripod wide 4x in 20 s, two different cars, the missing gate/aerial, 720p and probe frames
+  in a "final", a dead gap before the ignition, every scene the same loudness. -> T13.8, T13.6, T16.1, T14.5.
+- Root cause: the cut was called final without the full-cut review. -> G6.5 twice, T16.
+
 ## Process mistakes
 - Sending whole episodes; waiting on approvals between steps; status chatter; look-test loops; cloud finals.
 - Asking the GPU box session to install software on a coordinator's say-so: it correctly refused; the user's

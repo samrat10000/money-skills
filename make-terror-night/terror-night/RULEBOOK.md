@@ -177,3 +177,57 @@ in `DECISIONS.md`.
 - **T12.1 MUST** Never enter passwords, never accept terms, never buy. The user signs in.
 - **T12.2 MUST** Never install software on the user's PC without their explicit OK in words (Pillow for
   Blender's Python needed it). Never change power/driver/display settings.
+
+## T13. Story logic and continuity (Ep1 v7 "final" review, 2026-11-24: "people are going to notice these details")
+- **T13.1 MUST** One body, one place. When a character leaves a spot, no copy of them stays behind (hide or
+  move the rig on the frame they stand up). *Test:* scrub the first and last frame of every shot for leftover
+  doubles. *Why:* 007 showed Sam still sitting on the sofa while he grabbed the keys.
+- **T13.2 MUST** No invisible hands. Every object that moves is moved by something visible (a hand, wind, an
+  impact). If the actor is off-screen, reframe so the hand is in frame or cut on the action. *Why:* 070's
+  phone was "picked up by some invisible thing".
+- **T13.3 MUST** No geography jumps. Every change of place shows the connecting move (door, flight, turn),
+  and the last frame of shot N matches the first frame of shot N+1 in position, direction and light.
+  *Test:* put each cut's out-frame and in-frame side by side. *Why:* stairs (43 s) jumped to the lobby
+  (44 s) and then to the garage: "these whole scenes are really cut off".
+- **T13.4 MUST** Bodies never pass through bodies. Vehicles, creatures and props get a per-frame
+  bounding-box overlap check, and every encounter has a shown outcome (a hit, a kill, an escape, a U-turn).
+  *Why:* the car "goes inside" the Brute and nothing happens.
+- **T13.5 MUST** Creatures turn with their feet. No root rotation or slide without stepping feet; if the legs
+  are not animated, the root stays still and the CAMERA moves. *Why:* the Screamer floated round (25 s).
+- **T13.6 MUST** Latest approved version only. Each character, vehicle, set and sound has ONE current
+  approved version in `EPISODE_STATE.md`; the edit uses only those (the Stalker = the teaser model with its
+  skull tilt + saccades). One hero car for the whole episode. *Why:* v7 used the old Stalker, the v1 Brute
+  shot and two different cars.
+- **T13.7 MUST** An approved sound is locked like an approved shot: never swap it for a new one. *Why:*
+  the Screamer's superb earlier scream was replaced with an "absolute trash" one.
+- **T13.8 MUST** Never repeat the same framing in the first 30 s (the hook window). *Why:* the tripod wide
+  appeared four times in 20 s.
+
+## T14. Voice, narration, music (same review)
+- **T14.1 MUST** Voice casting is locked per character (gender, age, timbre, voice id) in a cast table, and
+  every rendered line is checked against it. *Why:* Sam's corridor line came out sounding female.
+- **T14.2 MUST** Narration never overlaps a dialogue or call line. Every line is 9-12 dB above its bed, and
+  the bed ducks under it; confirm by listening, not by numbers alone. *Why:* narration buried under the call
+  at 12-15 s.
+- **T14.3 MUST** Night Terror has NO background music. Only real recordings, plus ONE short piece (6-8 s)
+  at the climax creature encounter, blended in and landing on the hit. *Why:* director, 2026-11-24.
+- **T14.4 MUST** Vehicle sound is built from real recordings matched to the car (V8: starter crank, catch,
+  idle, revs, load, pass-by, tyre squeal, skid, splash), never a generic drive loop. The teaser library
+  (credited in the teaser's CREDITS file) is the bar. *Why:* "the car sounds are absolutely trash".
+- **T14.5** Dynamics: quiet scenes stay quiet (about -26 LUFS short-term), action is loud (-14); master
+  -14 LUFS integrated. Never loudnorm every shot to one level.
+
+## T15. Hook and documentary camera
+- **T15.1 MUST** Open with an IG hook: within 3 s, narration states place + time + event over a strong
+  image ("This was New York City. 3:47 a.m. Then... boom."). Never a creature reveal in the first second
+  (the v6 rejection).
+- **T15.2 MUST** Found footage has two cameras: the hero's camcorder, and a hidden watcher filming him
+  (long lens from far away, REC overlay, zoom and focus hunting, breathing). At least one watcher shot per
+  act; never reveal who is filming.
+
+## T16. "Final" means final
+- **T16.1 MUST** Call a cut "final" only when every shot in it is an APPROVED full-resolution render of the
+  current version. Anything else is "assembly vN" and is said so plainly. Never cut from probes, 720p review
+  clips or old versions. *Why:* the v7 "final" mixed approved shots, 720p previews and cloud test frames,
+  and the director was "disappointed".
+- **T16.2 MUST** Before delivery, run the full-cut review (QA.md G6.5) twice and fix what it finds.
