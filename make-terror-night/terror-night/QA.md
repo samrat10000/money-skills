@@ -104,6 +104,19 @@ Full render:
 - [ ] IG file (crf 17), master (crf <= 12), phone preview (720x1280 < 15 MB), credits, download links
 - [ ] watched 3 times: picture, sound, as a viewer at phone size; Director's eye on the whole episode
 
+## G6.5 Full-cut review (twice, before ANY delivery of a cut)
+Watch the whole cut with sound, then walk the shot table row by row:
+- [ ] every shot is its approved, current, full-resolution version (no probes, no 720p, no old model)
+- [ ] same hero car, same creature versions, same costume in every shot (T13.6)
+- [ ] every cut: out-frame of N vs in-frame of N+1 side by side, place / direction / light continuous (T13.3)
+- [ ] no leftover doubles, no invisible hands, no pass-throughs, no floating turns (T13.1, .2, .4, .5)
+- [ ] no framing repeated in the first 30 s; the hook states place + time + event (T13.8, T15.1)
+- [ ] every line audible and in its locked voice; no narration over calls (T14.1, T14.2)
+- [ ] no music except the one climax piece; vehicle and creature sounds are real and approved (T14.3, T13.7)
+- [ ] no dead air (look for drops below -40 dB in a per-half-second loudness scan that are not meant)
+- [ ] dynamics: quiet scenes quiet, action loud (T14.5)
+Log both passes in QA_LOG.md. If anything fails, it is not final (T16.1).
+
 ## G7 Learn
 - [ ] every director note of this episode is in SHOT_RULES.md + MISTAKES.md with a general rule and a test
 - [ ] skill update proposed (RULEBOOK line, PLAYBOOK entry) for anything new
