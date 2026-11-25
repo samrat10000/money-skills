@@ -132,3 +132,6 @@ Per shot: native frames when ALL exist, else a labelled STAND-IN, else black MIS
 VHS + REC/timecode/battery OSD drawn with PIL shapes, never font glyphs, only on the hidden-watcher shots; tape tear on the
 last); each shot encoded at its exact frame count (short sources hold the last frame), concat, mux the master WAV, IG
 (crf 17), master (crf 12), phone (720x1280, < 15 MB), `SOURCES.md`. Re-run after every finished cut; unchanged shots skip.
+- VRAM creep on the 4 GB card: after ~60-90 frames in one Blender process, VRAM reaches ~3.8 GB and frames go from
+  ~100 s to ~260 s. Check `nvidia-smi` when a cut slows; stop the queue + blender.exe, delete the 0-byte PNG, restart the
+  queue: the cut resumes at the same frame with fresh VRAM (~2.2 GB). Shot-by-shot clips: `edit8\deliver_shot.py <shot>`.
