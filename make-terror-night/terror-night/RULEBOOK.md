@@ -16,6 +16,11 @@ in `DECISIONS.md`.
 - **T0.5 MUST** Files > 20 MB also get a direct download link (GitHub raw + blob page). Phone previews of big
   attachments have no download button.
 - **T0.6** The full episode is cut ONLY from approved shots, at full 1080 from the GPU box.
+- **T0.7 MUST** Every render is native 1080x1920 frames: probes may be low-res, but ANY shot that can end up in a cut
+  (preview, review clip or final) renders at RES=1 on the GPU box. Send 720p review encodes made FROM the 1080 frames, never
+  720p renders. *Test:* the shot's PNGs are 1080x1920. *Why:* Ep1's 13 approved keep shots exist only as 720p previews,
+  so the "final" had to be upscaled (softer ink lines, rain, tile detail); director 2026-11-25: "from now on we'll always
+  render at 1080p so that we don't hassle to this kind of problem ever again".
 
 ## T1. Story and structure
 - **T1.1 MUST** No missing steps. Every location change is shown or caused: wake -> phone -> keys -> door ->
@@ -146,6 +151,14 @@ in `DECISIONS.md`.
 - **T7.5** Each shot's sound is built when the shot is built (`snd7/sNNN.py`), so every preview has real
   sound; the final mix rebalances.
 - **T7.6 MUST** Master -14 LUFS integrated, true peak <= -1 dBTP (previews -18..-20 LUFS are fine).
+- **T7.7 MUST** Ducking must let go. Any envelope follower run at a control rate (every N samples) uses
+  `exp(-N / (t * SR))` coefficients. *Test:* a 1 s line over a constant bed: the bed is back within 0.5 dB 1 s after the
+  line ends. *Why:* Ep1 v8 mix_v8.py used per-sample coefficients at a 48-sample step: release ~17 s, so every SFX and bed
+  sat 10-16 dB down for 17 s after each line ("a bit clustery, sound effects are not there").
+- **T7.8** Beds are stereo: rain/room/traffic beds use a decorrelated second read of the same real recording for the right
+  channel (+3.7 s offset); lines, cars, impacts stay centred. *Test:* `scan.py` L/R correlation < .9 on bed-only shots.
+- **T7.9 MUST** After every mix, run the per-shot scan (`scripts/scan.py`: RMS and quietest half second per shot) and read it
+  against T14.5 before mastering: action shots in a run must not sag (Ep1: 100 -12, 110 -20, 120 -24 dB was a bug).
 
 ## T8. Reuse and continuity
 - **T8.1 MUST** Before reusing a shot/asset, read every past note on it. Keep what the director loved
@@ -161,6 +174,14 @@ in `DECISIONS.md`.
 - **T9.3** Cloud CPU only for probes or when the GPU box is unreachable; 16 GB RAM: no more than ~44 rigged
   characters + duplicates + silhouettes (130 rigged went OOM).
 - **T9.4** If you must cut corners (STEP=2 + frame blend), say so in the critique; never on fast motion.
+- **T9.5 MUST** A render queue encodes a shot's mp4 ONLY when every expected frame exists (expected count per cut in the
+  queue). *Why:* a stopped Blender left cut 525 at 63/144 frames, the queue encoded it anyway, then skipped it as "done".
+- **T9.6 MUST** Probe the frames AFTER each event, not only before it (blast, crash, drop). *Why:* the Ep1 hook's "tower
+  beyond erupts" had no tower; the fireball floated in black and only the post-blast frame showed it.
+- **T9.7** Before resuming a stopped queue, probe (RES .4, 16 spp, 4-6 frames) every cut edited since its last look.
+  Ep1 v8: 3 of 4 probed cuts needed a fix; 15 min of probes saved ~6 h of wasted 1080 frames.
+- **T9.8** Long queues run DETACHED (`Start-Process powershell ... -WindowStyle Hidden`, log appended), never as a child of
+  the agent session, so a closed window or ended session does not kill a 20-hour render.
 
 ## T10. Process
 - **T10.1** Logs after every review (WORKING, DECISIONS verbatim, MISTAKES, SHOT_RULES, TOOLS).
@@ -202,6 +223,11 @@ in `DECISIONS.md`.
   the Screamer's superb earlier scream was replaced with an "absolute trash" one.
 - **T13.8 MUST** Never repeat the same framing in the first 30 s (the hook window). *Why:* the tripod wide
   appeared four times in 20 s.
+- **T13.9 MUST** Everything the shot card says happens has geometry under it (the tower that erupts, the building that
+  burns). No emitter, volume or light hangs in empty space. *Test:* the post-event probe (T9.6).
+- **T13.10** Looking UP from inside a car at something on an overpass: long lens (85 mm), aim ~1.2 m above the creature's
+  eyes, so the parapet is the bottom edge. At 50 mm aimed at the creature, the deck face fills half the frame and the
+  under-deck lamp shows as a white ball (Ep1 v8 135).
 
 ## T14. Voice, narration, music (same review)
 - **T14.1 MUST** Voice casting is locked per character (gender, age, timbre, voice id) in a cast table, and
@@ -231,3 +257,6 @@ in `DECISIONS.md`.
   clips or old versions. *Why:* the v7 "final" mixed approved shots, 720p previews and cloud test frames,
   and the director was "disappointed".
 - **T16.2 MUST** Before delivery, run the full-cut review (QA.md G6.5) twice and fix what it finds.
+- **T16.3** The assembler labels every shot's source (native 1080 / approved / STAND-IN / MISSING) in `SOURCES.md` and names
+  the file `-assembly` until none is a stand-in (`scripts/assemble.py`). Interim assemblies are fine to show, always with
+  that table. A director-approved exception (Ep1: the 720p keep shots, 2026-11-25) is written in the episode's DECISIONS.

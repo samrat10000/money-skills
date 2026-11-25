@@ -16,6 +16,11 @@ Here is where the tokens went and the rule that prevents each leak.
 | Long polling and status chatter | steady drain | Background renders + notifications; reply only with results, blockers or questions. |
 | Reading huge files / logs into context | steady drain | `tail -c`, `grep`, head; never cat a render log or a big .py whole if you only need one function. |
 | Re-deriving the pipeline in each new session | per session | This skill + EPISODE_STATE.md + SHOT_RULES.md. Read them, do not rediscover. |
+| Resuming a stopped render blind | hours of GPU | Probe edited cuts first (T9.7); 3 of 4 needed fixes in Ep1 v8. |
+| Hunting for files across sessions | many calls | Read the episode's WORKING/STATE file first; ENVIRONMENT.md "Install on the GPU box" names every folder. |
+| Sub-1080 renders that later block the final | 12-20 h re-render | T0.7: every shot that can reach a cut renders at 1080. |
+| Guessing why a mix sounds crowded | rounds of remixing | `scripts/scan.py` + `STEMS=1` gains first; check the duck envelope (T7.7). |
+| Cloud-only scripts (bash, /tmp, python3) on Windows | trial and error | PIPELINE.md "Windows / Asus gotchas". |
 
 ## Model routing
 - Strong model (Opus-class, high effort): story, plan, creature design, shot code, QA verdicts.

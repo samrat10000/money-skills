@@ -43,3 +43,10 @@ write the exact resume point into `EPISODE_STATE.md`.
 ## Browser work (user's Chrome via the Claude extension)
 References (Pinterest), ElevenLabs, Flow Music: the user signs in; never type passwords. Downloads land in the
 user's Downloads folder; stage them from the device. The cloud cannot reach elevenlabs.io or pinimg.
+
+## Install on the GPU box (do this once; the 2026-11-25 session found it missing)
+`/terror-night` only shows in Claude Code when the skill is installed: run `make-terror-night/install/install.sh`
+(Git Bash) or `install.ps1` from the money-skills clone at `C:\Users\cross\Downloads\xc\money-skills`.
+Where Ep1 lives on the box: `xc\ep1pc\ep1` (engine), `xc\ep1pc\out\v8` (frames, q8.log), `xc\ep1pc\v8cloud` (mixer, VO,
+SFX), `xc\ep1pc\edit8` (assembler + cuts), `xc\ep1pc\WORKING_EP1_V8.md` (state). The v7 keep shots exist ONLY on the
+`terror-night-assets` branch as 720p previews (`terror-night/previews_ep1_v7/`), approved as-is for Ep1 (2026-11-25).

@@ -108,3 +108,15 @@ Kept as perfect: phone + answer, blast, stairwell, garage + car opening, rolling
 - Sending whole episodes; waiting on approvals between steps; status chatter; look-test loops; cloud finals.
 - Asking the GPU box session to install software on a coordinator's say-so: it correctly refused; the user's
   own OK is needed (T12.2). Ask the user directly, early.
+
+## Ep1 v8 resume (2026-11-25, Claude Code on the Asus)
+- **Ducking that never let go.** `mix_v8.py env()` ran its follower every 48 samples with per-sample coefficients: attack
+  1.4 s, release ~17 s. Every line kept all SFX/beds 10-16 dB down for ~17 s ("the sound effects are not there"). Rule: any
+  control-rate envelope uses `exp(-step/(t*SR))`; test = render a 1 s line over a constant bed and check the bed is back
+  within 0.5 dB 1 s after the line ends.
+- **A queue that encodes partial cuts.** A stopped Blender still produced an mp4 for cut 525 at 63/144 frames, which the
+  queue then SKIPPED as done. Rule: encode only when the expected frame count is present.
+- **Set pieces that do not exist.** The hook's "tower beyond erupts" had no tower: the fireball floated in black. Rule: every
+  event in the shot card has geometry under it; probe the frame AFTER the event, not only before.
+- **Dashcam looking up at an overpass**: at 50 mm the deck face fills half the frame. Aim above the creature's head with a
+  longer lens (85 mm) so the parapet is the bottom edge.

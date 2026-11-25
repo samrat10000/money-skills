@@ -126,6 +126,6 @@ there (or copy it into the project). If `engine/ep1/car/nt.glb` is missing, run 
 | MISTAKES.md | every rejection v1 -> v7 and the fix |
 | COMPANION_SKILLS.md | the sibling skills (make-teaser, make-motion2d) and tools to install |
 | templates/ | EPISODE_STATE.md, shot_card.md, dialogue_table.md, qa_log.md, SHOT_RULES_template.md |
-| scripts/ | look_test.py, grade.py, contact_sheet.py, preview_encode.sh, run_cut_asus.ps1, fetch_assets.sh/.ps1, make_kit.sh |
+| scripts/ | look_test.py, grade.py, contact_sheet.py, preview_encode.sh, run_cut_asus.ps1, queue_template.ps1 (detached multi-cut queue with a partial-cut guard), assemble.py (re-runnable episode assembler + SOURCES.md), master.py (-14 LUFS, Windows-safe), scan.py (per-shot loudness), fetch_assets.sh/.ps1, make_kit.sh |
 | engine/ | (in the repo clone; an installed copy names it in `ENGINE_PATH.txt`) the real production code: ep1/ (shots2.py, v7sets.py, city.py, anim.py, snd7/ mixers), cast/ (character builders), pent7/ (penthouse), mh/ (MakeHuman CC0 base) |
 | reference/ | approved stills (the quality bar), the v7 storyboard, the original logs |
