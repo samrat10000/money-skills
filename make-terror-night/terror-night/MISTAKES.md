@@ -120,3 +120,9 @@ Kept as perfect: phone + answer, blast, stairwell, garage + car opening, rolling
   event in the shot card has geometry under it; probe the frame AFTER the event, not only before.
 - **Dashcam looking up at an overpass**: at 50 mm the deck face fills half the frame. Aim above the creature's head with a
   longer lens (85 mm) so the parapet is the bottom edge.
+- **Blown moon (150 v8).** The overpass `moondisc` (emit 40) reads as a white ball when it lands beside a close-up. Rule:
+  any emissive disc/sky object that can enter a close frame gets emit <= 4 so it glows through fog; check every frame edge.
+- **Event out of frame (152 v8).** A long-lens watcher aimed at the landing spot never shows the fall itself. Rule: a
+  tracking long lens STARTS on the subject and follows the event; probe the event frames (T9.6).
+- **Fixes need a second pass.** A queue already past a cut will not revisit it: archive the old frames + mp4 to `v8_old`,
+  then a `queue_after.ps1` waits for the running queue and re-runs it (only cuts without an mp4 render).
