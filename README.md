@@ -21,3 +21,6 @@ Or install one skill with its own `install/` script. Update later with `git pull
 ## Adding a new skill
 Create a folder `make-<thing>/` with `README.md`, `AGENTS.md`, the skill folder (with `SKILL.md`),
 `install/install.ps1` and `install/install.sh`, then add a row to the table above.
+
+## make-optimus
+The token-saving operating layer for every skill here: 10 rules, the standard project folder layout, helper briefs, `qa_auto.py`. See `make-optimus/README.md`.
