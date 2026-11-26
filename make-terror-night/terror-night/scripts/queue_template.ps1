@@ -17,9 +17,18 @@ foreach ($c in $cuts.Keys) {
   if (Test-Path $mp4) { "SKIP $c (done)"; continue }
   while (tasklist | findstr /i blender.exe) { Start-Sleep 20 }
   $env:CUT=$c; $env:RES='1'; $env:SAMP='32'; $env:PERSIST='0'; $env:VSTEP='10'; $env:DEVICE='GPU'; $env:MB='.2'; $env:STEP='1'; $env:OUTROOT=$out
-  if ($fr) { $env:FR=$fr } else { Remove-Item Env:FR -ErrorAction SilentlyContinue }
+  # 2026-11-26: render in 25-frame chunks, one fresh Blender per chunk (VRAM creep took c400 from 19 s to 8 min/frame overnight)
+  if ($fr) { $f0, $f1 = $fr.Split(',') | ForEach-Object { [int]$_ } } else { $f0 = 1; $f1 = $expect[$c] }
   $t = Get-Date
-  & C:\Users\cross\Downloads\xc\blender501\blender.exe -b --python shots2.py *> "$out\r$c.log"
+  for ($a = $f0; $a -le $f1; $a += 25) {
+    $b = [Math]::Min($a + 24, $f1)
+    $have = @(($a..$b) | Where-Object { $p_ = "$out\c$c\f{0:D4}.png" -f $_; (Test-Path $p_) -and ((Get-Item $p_).Length -gt 0) }).Count
+    if ($have -eq ($b - $a + 1)) { continue }
+    Get-ChildItem "$out\c$c\*.png" -ErrorAction SilentlyContinue | Where-Object Length -eq 0 | Remove-Item
+    while (tasklist | findstr /i blender.exe) { Start-Sleep 10 }
+    $env:FR = "$a,$b"
+    & C:\Users\cross\Downloads\xc\blender501\blender.exe -b --python shots2.py *>> "$out\r$c.log"
+  }
   $sec = ((Get-Date) - $t).TotalSeconds
   $pngs = @(Get-ChildItem "$out\c$c\*.png" -ErrorAction SilentlyContinue | Sort-Object Name)
   $n = $pngs.Count

@@ -126,3 +126,7 @@ Kept as perfect: phone + answer, blast, stairwell, garage + car opening, rolling
   tracking long lens STARTS on the subject and follows the event; probe the event frames (T9.6).
 - **Fixes need a second pass.** A queue already past a cut will not revisit it: archive the old frames + mp4 to `v8_old`,
   then a `queue_after.ps1` waits for the running queue and re-runs it (only cuts without an mp4 render).
+- **One Blender per cut creeps (Ep1 v8 night of 2026-11-25).** On the 4 GB card the hook went from 19 s to 3-8 min per
+  frame over ~100 frames; a "no frame in 8 min" watchdog never fired because slow frames still landed. Rule: ALWAYS render
+  in 25-frame chunks with a fresh Blender per chunk (`scripts/queue_template.ps1` does it); watch seconds-per-frame against
+  the cut's first chunk, not just "any frame lately".
