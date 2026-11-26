@@ -113,6 +113,7 @@ there (or copy it into the project). If `engine/ep1/car/nt.glb` is missing, run 
 |---|---|
 | DISCIPLINE.md | agent behaviour for Claude desktop, VS Code extension, Codex and small models |
 | SERIES_BIBLE.md | the world, cast, car, creatures, locations, look and story devices of Night Terror |
+| PRODUCTION_BIBLE.md | the authoritative series reference: approved asset registry, location chain, camera/light/animation/sound/VFX standards, QC table, lessons log. READ FIRST. |
 | RULEBOOK.md | every rule with its test and the rejection that created it (T0-T16; T13-T16 are the story-logic, voice, hook and 'final means final' rules from the v7 final review) |
 | QA.md | the self-review loop, Director's eye list (Sam's real triggers), gates G0-G7 |
 | PIPELINE.md | the engine: how a shot is coded, env vars, render recipes (cloud CPU / Asus GPU), encode |

@@ -260,3 +260,21 @@ in `DECISIONS.md`.
 - **T16.3** The assembler labels every shot's source (native 1080 / approved / STAND-IN / MISSING) in `SOURCES.md` and names
   the file `-assembly` until none is a stand-in (`scripts/assemble.py`). Interim assemblies are fine to show, always with
   that table. A director-approved exception (Ep1: the 720p keep shots, 2026-11-25) is written in the episode's DECISIONS.
+
+## T17. The director's permanent production rules (Ep1 review, 2026-11-26; details in PRODUCTION_BIBLE.md)
+- **T17.1 MUST** Absolute asset consistency: one approved version of every character, prop, set, vehicle, creature, sound and
+  the camcorder OSD (PRODUCTION_BIBLE section 1). *Test:* every shot lists its assets + versions; no per-shot "approximate"
+  rebuilds (the hook's stand-in penthouse broke this).
+- **T17.2 MUST** Spatial continuity: locations form one connected map; what is seen through a doorway is the next shot's
+  space. *Test:* floor plan + door-open frames for every location change.
+- **T17.3 MUST** Match on action across cuts (position, orientation, hands, direction, object/door state, vehicle speed, light,
+  audio). An action never restarts because the angle changed (Ep1 125: the car stopped twice).
+- **T17.4 MUST** Characters always feel alive (breathing, weight, posture, fingers, head, reactions). *Test:* no two
+  consecutive frames of a character identical in a motion strip; no crossed legs at rest.
+- **T17.5 MUST** Persistent sound identity per character/object/location; perspective by processing, never by swapping the
+  recording (Ep1: six different cars).
+- **T17.6** Realism through small details: inspect the whole frame, background included.
+- **T17.7** Keep PRODUCTION_BIBLE.md updated after every episode and review.
+- **T17.8 MUST** Shot-by-shot QC table (bible section 8) for every shot, then the whole episode continuously, twice.
+- **T17.9 MUST** The first second shows a person and an open question; the first hard event lands by ~1.5 s (hooks decide
+  the scroll in 1-3 s).

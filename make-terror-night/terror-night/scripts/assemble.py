@@ -5,7 +5,7 @@ VHS + REC + timecode only on the hidden-watcher shots, tape stop on 165), encode
 count, concat, lay ep1_v8_mix.wav under it, write IG / master / phone files and a SOURCES report.
 Run:  python assemble_v8.py            (needs numpy, Pillow, ffmpeg on PATH)
 """
-import os, sys, glob, json, subprocess, shutil
+import os, sys, glob, json, subprocess, shutil, math
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
@@ -45,7 +45,7 @@ SHOTS = [
  ('135_dash_reveal', 60, [('v8', 535, 1), ('mp4', rf'{XC}\ep1pc\out\v8_old\135_dash_reveal_v8_50mm_silent.mp4')], ''),
  ('140_crash_zoom', 48, [('v8', 540, 1), ('mp4', rf'{V8}\140_crash_zoom_v8_silent.mp4')], ''),
  ('150_scream', 60, [('v8', 550, 1), ('mp4', rf'{V7F}\150_stalker_v1_silent.mp4')], ''),
- ('152_watcher_bridge', 36, [('v8', 552, 1)], 'watch'),
+ ('152_watcher_bridge', 48, [('v8', 552, 1)], 'watch'),
  ('155_black', 36, [('black',)], ''),
  ('160_empty_seat', 252, [('v8', 160, 1), ('mp4', rf'{KEEP}\160_empty_seat_v1.mp4')], ''),
  ('165_rec_end', 36, [('v8', 565, 1)], 'watch_tear'),
@@ -98,17 +98,28 @@ def vhs(a, k=1.0):
     if rng.random() < .3 * k: out[H - 24:] = out[H - 24:] * .6 + rng.integers(40, 200, (24, W, 1))
     b = np.asarray(Image.fromarray(out.clip(0, 255).astype(np.uint8)).resize((W // 2, H), Image.BILINEAR).resize((W, H), Image.BILINEAR)).astype(np.float32)
     b[::2] *= .94; lum = b.mean(2, keepdims=True); return lum + (b - lum) * .82
-try: FONT = ImageFont.truetype(r'C:\Windows\Fonts\consola.ttf', 46)
+try: FONT = ImageFont.truetype(r'C:\Windows\Fonts\lucon.ttf', 50)
 except Exception: FONT = ImageFont.load_default()
-def rec_overlay(img, i):          # diegetic camcorder OSD (allowed: T0.2 diegetic text). Blinks at 1 Hz, timecode 03:51 onward
-    d = ImageDraw.Draw(img); t = 3 * 3600 + 51 * 60 + 12 + i / FPS
-    if (i // 12) % 2 == 0: d.ellipse((70, 110, 106, 146), fill=(220, 30, 30))
-    d.text((122, 104), 'REC', font=FONT, fill=(235, 235, 235))
-    d.text((70, H - 170), f'{int(t // 3600):02d}:{int(t % 3600 // 60):02d}:{int(t % 60):02d}:{int(i % FPS):02d}', font=FONT, fill=(235, 235, 235))
-    d.text((W - 330, 104), 'SP', font=FONT, fill=(235, 235, 235)); bx0 = W - 250          # battery: drawn, 3 of 4 bars
-    d.rectangle((bx0, 112, bx0 + 150, 146), outline=(235, 235, 235), width=3); d.rectangle((bx0 + 150, 120, bx0 + 158, 138), fill=(235, 235, 235))
-    for k in range(3): d.rectangle((bx0 + 8 + k * 36, 119, bx0 + 38 + k * 36, 139), fill=(235, 235, 235))
-    return img
+def rec_overlay(img, i):          # 2026-11-26 R5: an authentic late-90s consumer camcorder OSD (Hi8 / VHS-C), reusable for every watcher shot
+    """REC + blinking dot (top left), segmented battery + tape counter (top right), burned-in date/time (bottom left).
+    Monospaced white with a 2 px dark shadow, slightly soft, as character-generator text was. No timecode (pro cameras only)."""
+    from PIL import ImageFilter
+    W_, H_ = img.size; lay = Image.new('RGBA', (W_, H_), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    i = i + OSD_F0; sec = 3 * 3600 + 47 * 60 + 2 + i / FPS; cnt = 6 + i / FPS      # one tape, one clock: 3:47 a.m. as Sam says, running through the episode
+    def txt(x, y, t, col=(238, 238, 232, 255)):
+        d.text((x + 3, y + 3), t, font=FONT, fill=(0, 0, 0, 170)); d.text((x, y), t, font=FONT, fill=col)
+    if (i // 12) % 2 == 0: d.ellipse((74, 112, 106, 144), fill=(0, 0, 0, 150)); d.ellipse((70, 108, 102, 140), fill=(226, 34, 30, 255))
+    txt(116, 102, 'REC')
+    bx = W_ - 250; d.rectangle((bx + 3, 115, bx + 133, 145), outline=(0, 0, 0, 160), width=4)
+    d.rectangle((bx, 112, bx + 130, 142), outline=(238, 238, 232, 255), width=4); d.rectangle((bx + 130, 120, bx + 138, 134), fill=(238, 238, 232, 255))
+    for k in range(3): d.rectangle((bx + 9 + k * 40, 119, bx + 41 + k * 40, 135), fill=(238, 238, 232, 255))
+    txt(W_ - 250, 160, f'{int(cnt // 3600)}:{int(cnt % 3600 // 60):02d}:{int(cnt % 60):02d}')
+    h12 = int(sec // 3600) % 12 or 12
+    txt(70, H_ - 230, 'NOV 26 2026'); txt(70, H_ - 165, f'{h12}:{int(sec % 3600 // 60):02d}:{int(sec % 60):02d} AM')
+    lay = lay.filter(ImageFilter.GaussianBlur(.8))
+    out = img.convert('RGBA'); out.alpha_composite(lay); out = np.asarray(out.convert('RGB')).copy()
+    out[1::2, 1:] = out[1::2, :-1]                    # faint interlace: odd field 1 px late
+    return Image.fromarray(out)
 
 def grade_shot(name, n, kind, gen, outmp4):
     enc = subprocess.Popen(['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
@@ -123,8 +134,15 @@ def grade_shot(name, n, kind, gen, outmp4):
     return i
 
 PAD = {}
+OSD_F0 = 0
+CUR = ''
+LIFT = {'055_b1_stairs': (20, 50, .72)}   # 2026-11-26 R11: the black stretch of the service stair read as dead time: gentle gamma lift (frames a-b, gamma)
 def write(enc, a, i, n, kind):
     f = a.astype(np.float32)
+    if CUR in LIFT:
+        a0, b0, gm = LIFT[CUR]
+        if a0 <= i <= b0:
+            w = math.sin(math.pi * (i - a0) / (b0 - a0)); f = f * (1 - w) + (255 * (f / 255) ** gm) * w
     if kind:
         f = grain(f, .035); f = vhs(f, .8)
         if kind == 'watch_tear' and i >= n - 8:
@@ -136,8 +154,9 @@ def write(enc, a, i, n, kind):
 
 def main():
     only = set(sys.argv[1:])
-    report = []
+    report = []; global OSD_F0; ep_f = 0
     for name, n, srcs, kind in SHOTS:
+        OSD_F0 = ep_f; ep_f += n; global CUR; CUR = name
         mp4 = rf'{SH}\{name}.mp4'
         got = None
         for j, s in enumerate(srcs):
@@ -148,7 +167,7 @@ def main():
         if not got:
             got = (lambda n=n: (np.zeros((H, W, 3), np.uint8) for _ in range(n))), 'MISSING (black placeholder: v8 render not finished)', False
         gen, label, full = got
-        tag = json.dumps([name, label])
+        tag = json.dumps([name, label, 'osd2' if kind else '', str(LIFT.get(name, ''))])
         stamp = mp4 + '.src'
         if (not only or name in only) and not (os.path.exists(mp4) and os.path.exists(stamp) and open(stamp).read() == tag):
             k = grade_shot(name, n, kind, gen, mp4); open(stamp, 'w').write(tag)
