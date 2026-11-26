@@ -67,3 +67,4 @@ paths. Moves happen only when nothing is rendering, with junctions left at old p
 | FOLDERS.md | the standard project layout, the migration procedure, the paths file |
 | HELPERS.md | how to brief a small-model helper (template) and which jobs to give it |
 | scripts/qa_auto.py | automatic shot/episode QA: frames, black/frozen runs, stutter, exposure, loudness, true peak |
+| scripts/token_report.py | tokens per session / time window from the local transcripts; the end-of-pass verdict line: "Optimus: WORKING / NOT WORKING" = tokens per finished shot down AND director corrections not up |
