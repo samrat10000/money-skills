@@ -19,6 +19,8 @@ almost nothing when it is event-driven. Every rule below attacks one of those.
    stutter, exposure, loudness, true peak). Open an image only when a check flags OR for the one designed look per shot
    (one phone-size contact sheet + crops of the critical region: face, hands, jaw, tyres). Never open full frames to
    "see how it's going".
+   Crop by CODE, not by guessing: locate the subject (a colour/brightness mask, a projected bone position) and crop
+   around its centre; three guessed crops of the Stalker's head missed, one located crop nailed it.
 2. **Debug with probes that print, not renders.** Positions, collisions, gaps, ray hits, jaw direction, light energy:
    print them from the scene (dry runs) instead of rendering to look. A printed number costs a line; a test frame costs
    an image + minutes.
