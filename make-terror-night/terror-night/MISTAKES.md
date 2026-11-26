@@ -130,3 +130,14 @@ Kept as perfect: phone + answer, blast, stairwell, garage + car opening, rolling
   frame over ~100 frames; a "no frame in 8 min" watchdog never fired because slow frames still landed. Rule: ALWAYS render
   in 25-frame chunks with a fresh Blender per chunk (`scripts/queue_template.ps1` does it); watch seconds-per-frame against
   the cut's first chunk, not just "any frame lately".
+- **AAC overshoot (Ep1 v8 final).** A WAV master at -1.0 dBTP measured +0.3 dBFS after the AAC mux. Rule: master to
+  <= -2.4 dBTP (`master.py` ceiling .58) and measure the FINAL mp4s, not the WAV; a 128k phone encode needs ~-0.6 dB more.
+- **hide_render kills the light (152).** Hiding an emissive moon removed the street's key light (frames went black). To
+  drop a visible disc but keep its light and reflections: `obj.visible_camera = False`. Set materials on the OBJECT slot
+  when the mesh uses object-linked materials (a mesh-material swap silently did nothing on 150).
+- **Crowds vs a 4 GB GPU.** 44 rigged + 22 duplicate zombies took ~25 min/frame even with texture 1024 + simplify 1
+  (VRAM 3.9 GB, spilling to shared memory). Rule: probe ONE frame of every crowd shot on the target GPU before queueing;
+  over ~3.5 GB, render the crowd as a separate pass or cut rigged count, decided with the director.
+- **Process control from Git Bash.** `powershell -Command "Stop-Process ..."` / `Start-Process` inside a bash string
+  failed silently twice (an orphan Blender held the GPU 30 min, a queue never started). Use the PowerShell tool directly
+  and verify with a process listing afterwards.

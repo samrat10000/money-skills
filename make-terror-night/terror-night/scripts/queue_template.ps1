@@ -6,8 +6,8 @@ New-Item -ItemType Directory -Force $out | Out-Null
 $cuts = [ordered]@{
  '525'='125_brute_jturn|'; '530'='130_overpass_park|'; '535'='135_dash_reveal|'; '540'='140_crash_zoom|'; '550'='150_scream|';
  '552'='152_watcher_bridge|'; '565'='165_rec_end|'; '400'='000_hook|'; '404'='004w_watcher|'; '406'='006_screamer_still|';
- '441'='040_stairwell_ext|313,444'; '450'='050_lobby|'; '455'='055_b1_stairs|'; '471'='070_in_the_car|'; '490'='090_gate_burst|';
- '495'='095_watcher_street|'; '160'='160_empty_seat|' }
+ '441'='040_stairwell_ext|313,444'; '455'='055_b1_stairs|'; '471'='070_in_the_car|'; '490'='090_gate_burst|';
+ '495'='095_watcher_street|'; '160'='160_empty_seat|' }   # 450 (lobby) removed 2026-11-26 15:20: ~25 min/frame on the 4 GB GPU; final uses the approved v7 lobby
 $expect = @{ '525'=144; '530'=72; '535'=60; '540'=48; '550'=60; '552'=36; '565'=36; '400'=168; '404'=60; '406'=96;
  '441'=132; '450'=120; '455'=70; '471'=84; '490'=84; '495'=60; '160'=252 }
 Set-Location C:\Users\cross\Downloads\xc\ep1pc\ep1

@@ -30,7 +30,7 @@ SHOTS = [
  ('030_corridor', 72, [('mp4', rf'{KEEP}\030_corridor_v1.mp4')], ''),
  ('040_stairwell', 311, [('mp4', rf'{KEEP}\040_stairwell.mp4')], ''),
  ('041_stairwell_ext', 132, [('v8', 441, 313)], ''),
- ('050_lobby', 120, [('v8', 450, 1), ('mp4', rf'{KEEP}\050_lobby_v2.mp4')], ''),
+ ('050_lobby', 96, [('mp4', rf'{KEEP}\050_lobby_v2.mp4')], ''),
  ('055_b1_stairs', 70, [('v8', 455, 1)], ''),
  ('060_garage', 96, [('mp4', rf'{KEEP}\060_garage_v1.mp4')], ''),
  ('070_in_the_car', 84, [('v8', 471, 1), ('mp4', rf'{KEEP}\070_in_the_car_v1.mp4')], ''),

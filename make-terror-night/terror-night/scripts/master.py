@@ -6,7 +6,7 @@ def meas(f):
     s = o[o.rfind('Summary'):]
     return float(re.search(r'I:\s+(-?[\d.]+)', s).group(1)), float(re.search(r'Peak:\s+(-?[\d.]+)', s).group(1)), float(re.search(r'LRA:\s+(-?[\d.]+)', s).group(1))
 for it in range(10):
-    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', src, '-af', f'volume={g}dB,alimiter=limit=0.68:attack=1:release=60:level=false', '-ar', '48000', '-c:a', 'pcm_s24le', dst], check=True)
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', src, '-af', f'volume={g}dB,alimiter=limit=0.58:attack=1:release=60:level=false', '-ar', '48000', '-c:a', 'pcm_s24le', dst], check=True)
     I, TP, LRA = meas(dst); print(f'it {it} gain {g:+.2f} I {I} TP {TP} LRA {LRA}')
     if abs(I + 14) < .3 and TP <= -1.0: break
     g = round(g + (-14. - I) * 1.3, 2)
