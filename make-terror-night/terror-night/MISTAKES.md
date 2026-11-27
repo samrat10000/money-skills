@@ -199,3 +199,7 @@ wrong; half my report is not done. Rules born from it (apply to EVERY shot, ever
   the camera (parallax), never accept a bar through the hero.
 - **Story distance.** A 250 m 'safe' blast drowned in haze (soft sun, no punch); the right fix for 'too close to Sam' was the
   director's own reference spot (v8) + the stronger v9 look. Try the director's reference before inventing.
+- **Backslash escapes, again (v10 night).** Scripted edits wrote rf'{KEEP}\002_...' / '\060_...' through a normal Python
+  string: '\0..' became control characters, the assembler fell back to a black MISSING placeholder for 060. Rule: after any
+  scripted edit of a file holding Windows paths, scan it for control characters (ord < 32) and re-run the assembler's
+  source table; a MISSING/STAND-IN line blocks the release.
