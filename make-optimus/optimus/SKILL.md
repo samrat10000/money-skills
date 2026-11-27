@@ -70,3 +70,9 @@ paths. Moves happen only when nothing is rendering, with junctions left at old p
 | HELPERS.md | how to brief a small-model helper (template) and which jobs to give it |
 | scripts/qa_auto.py | automatic shot/episode QA: frames, black/frozen runs, stutter, exposure, loudness, true peak |
 | scripts/token_report.py | tokens per session / time window from the local transcripts; the end-of-pass verdict line: "Optimus: WORKING / NOT WORKING" = tokens per finished shot down AND director corrections not up |
+
+## Lessons (append)
+- 2026-11-27: one long chat costs more than any rule saves: by day 2 each turn re-read ~630k cached tokens (99% of usage).
+  Start a FRESH session per pass; resume from the state files (rule 9).
+- 2026-11-27: never grep or cat a file whose content is one huge line (minified HTML/JSON): it dumps everything. Check
+  `wc -l` first; use python to extract the part you need.
