@@ -141,3 +141,20 @@ Kept as perfect: phone + answer, blast, stairwell, garage + car opening, rolling
 - **Process control from Git Bash.** `powershell -Command "Stop-Process ..."` / `Start-Process` inside a bash string
   failed silently twice (an orphan Blender held the GPU 30 min, a queue never started). Use the PowerShell tool directly
   and verify with a process listing afterwards.
+
+## v9 review pass (11-26/27)
+- **Lights aimed away from the subject.** Both "city fire on him" AREA lights (hook 000, 004w) had `rot=(0, radians(-90), 0)`,
+  which points the light's -Z along +x, i.e. AWAY from Sam into the street; 004w's also sat outside the glass. Sam stayed a
+  black column for two versions while the comment said "lights his front". Rule: for every key light, print its world
+  direction (`lo.matrix_world.to_3x3() @ Vector((0,0,-1))`) against the vector to the subject in the dry run; the dot product
+  must be > 0.7. Put lights that must reach an interior INSIDE the glass and set `visible_camera = False`.
+- **Explosion inside the roof.** The hook fireball was centred 3 m above a roof whose crown was at 47 m: the roof sliced it
+  flat (a pasted sprite) and its only light sat above the roof, so the camera face stayed black. Rule: an explosion bursts
+  OUT of the camera-facing face, has a light IN FRONT of that face and one above, and blown-out emissive floors under it;
+  ray-test the fireball centre from the camera (DRY) before rendering.
+- **Blender 5 layered actions.** `action.fcurves` no longer exists; a cut crashed in the queue. Always go through the
+  `_fcurves(action)` helper (layers -> strips -> channelbags).
+- **Phone encode true peak.** 128 kbps AAC re-encode overshot to -0.2 dBTP from a -1.4 dBTP master. The phone encode gets
+  `volume=-1.2dB`; measure every delivered file with ebur128 peak=true.
+- **qa_auto stutter false positive in near-black frames**: frame diff collapses when luma < 8 (car passing over the lens).
+  Check luma alongside motion before chasing a stall.
