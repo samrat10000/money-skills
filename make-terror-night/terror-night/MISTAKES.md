@@ -158,3 +158,24 @@ Kept as perfect: phone + answer, blast, stairwell, garage + car opening, rolling
   `volume=-1.2dB`; measure every delivered file with ebur128 peak=true.
 - **qa_auto stutter false positive in near-black frames**: frame diff collapses when luma < 8 (car passing over the lens).
   Check luma alongside motion before chasing a stall.
+
+## v9 rejected by the director (11-27): "worse than v8"
+Director's words (condensed): the explosion is on Sam's window, he would be dead; the facades still lack the details I asked
+for; Sam in the chair is a block, nobody sleeps like that; the phone text still overflows and it is the same phone; the engine
+sound is worse than v8; the Brute hit looks like a push; the bridge was epic in v8 and you made it worse; subtitles placed
+wrong; half my report is not done. Rules born from it (apply to EVERY shot, every episode):
+- **Story check on every shot card:** where is the hero, can this physically happen to him, does it contradict the shot before
+  or after? An explosion must be far from the hero, readable as far (depth, scale cues, haze), never on his building.
+- **Never "defer" a director's note silently.** A pass ships only when every note ID has a frame/number proving it is done.
+  If something truly cannot be done, ask BEFORE the pass, never announce it in the release notes.
+- **Approved = frozen.** Anything the director called good (shot, sound, timing) stays byte-identical unless he names it.
+  When fixing one moment of an approved shot (152 jump), splice the fix into the approved version, do not rebuild around it.
+- **A/B against the previous version** for every changed shot and every changed sound, before calling it better.
+- **Review depth:** 3-4 full looks per shot + full-size crops of faces, hands, phone screens, subtitles; Optimus look limits
+  never apply to the final review.
+- **Characters:** the hero must be a detailed model (face, hands, clothing folds) in a natural pose for the action (sleeping =
+  head dropped, shoulders slumped, arms heavy, hands loose). A dark lump or a low-poly hood fails the shot.
+- **Sound I cannot hear:** keep the sound the director approved; change only what he names; measure the A/B (spectrum,
+  loudness per bus) and describe the difference honestly.
+- **Subtitles:** a consistent low band (bottom ~20-24% of frame, clear of IG UI), never on the action; check every cue on a frame.
+- **Research references first** (how films shoot car hits, distant explosions, phone screens) before building a hero moment.
